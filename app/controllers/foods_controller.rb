@@ -41,9 +41,21 @@ class FoodsController < ApplicationController
   end
 
   def edit
+		@post = Post.find(params[:id])
   end
 
   def edit_complete
+		p = Post.find(params[:id])
+		p.title = params[:post_title]
+		p.content = params[:post_content]
+		p.category = params[:post_category]
+		if p.save
+			flash[:alert] = "수정되었습니다."
+			redirect_to "/foods/show/#{p.id}"
+		else
+			flash[:alert] = p.errors.values.flatten.join(" ")
+			redirect_to :back
+		end
   end
 
   def delete_complete
