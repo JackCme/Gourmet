@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+=begin
 categories = ["한식","일식","중식","양식"]
 
 categories.each do |category|
@@ -18,3 +18,15 @@ categories.each do |category|
 		p.save
 	end
 end
+=end
+
+u = User.new
+u.username = "jack"
+u.password = "junlove1"
+u.save
+
+u = User.new
+u.username = "pitou"
+u.password = "junlove1"
+u.save
+
