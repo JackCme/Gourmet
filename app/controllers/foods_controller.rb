@@ -1,4 +1,9 @@
 class FoodsController < ApplicationController
+	# FoodsController의 어느 액션을 실행하기 전에 login_check 액션을 수행하라
+	before_action :login_check
+	# 적용 예외 대상 액션 지정
+	skip_before_action	:login_check, :only => [:posts, :posts_catetgory, :show]
+
   def posts
 		@posts = Post.all
   end
