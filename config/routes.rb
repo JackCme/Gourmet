@@ -9,6 +9,11 @@ Gourmet::Application.routes.draw do
   get "foods/delete_complete/:id" => "foods#delete_complete"
 	post "foods/write_comment_complete"
 	get "foods/delete_comment_complete/:id" => "foods#delete_comment_complete"
+  get "users/signup"
+  post "users/signup_complete"
+  get "users/login"
+  get "users/login_complete"
+  get "users/logout_complete"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
