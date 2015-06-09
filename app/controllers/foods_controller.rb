@@ -71,8 +71,10 @@ class FoodsController < ApplicationController
 
   def delete_complete
 		post = Post.find(params[:id])
+		comments = Comment.where(post_id: params[:id])
 		if post.user_id == session[:user_id]
 			post.destroy
+			comments.destroy_all
 			flash[:alert] = "삭제되었습니다."
 			redirect_to "/"
 		else
